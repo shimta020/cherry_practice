@@ -1,3 +1,3 @@
 require 'Date'
 today = Date.today
-puts today.mon
+puts today.strftime("%A")
