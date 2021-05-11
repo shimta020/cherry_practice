@@ -36,13 +36,14 @@
 # end
 # puts satisfaction
 
-n = gets.to_i
-a = gets.chomp.split.map(&:to_i)
-satisfication = gets.chomp.split.map(&:to_i).sum
-c = gets.split.map(&:to_i)
+# n = gets.to_i
+# a = gets.chomp.split.map(&:to_i)
+# satisfication = gets.chomp.split.map(&:to_i).sum
+# c = gets.split.map(&:to_i)
  
-(a.length-1).times do |i|
-  satisfication += c[a[i]-1] if a[i] + 1 == a[i+1]
-end
+# (a.length-1).times do |i|
+#   satisfication += c[a[i]-1] if a[i] + 1 == a[i+1]
+# end
  
-puts satisfication
+# puts satisfication
+
