@@ -5,10 +5,13 @@
 n,a,b = gets.split.map(&:to_i)
 
 sum = 0
-result = (a..n).map{|n| n}
-result.each do |n|
+[*a..n].each do |n|
   y = n.to_s.split('').map(&:to_i).sum
   sum += n if a <= y && y <= b
 end
 
 puts sum
+
+# digitsを使うと
+# n,a,b=gets.split.map &:to_i
+# p [*1..n].select{|x|s=x.digits.sum;a <= s && s <= b}.sum
