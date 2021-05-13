@@ -11,3 +11,13 @@ result = 0
   end
 end
 puts result
+
+# product
+# sets = ((0..(gets.to_i)).to_a.product( (0..(gets.to_i)).to_a, (0..(gets.to_i)).to_a))
+# x = gets.to_i
+ 
+# c = sets.count do |a|
+#   x == a[0]*500 + a[1]*100 + a[2]*50
+# end
+ 
+# puts c 
