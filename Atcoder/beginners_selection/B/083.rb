@@ -15,3 +15,5 @@ puts sum
 # digitsを使うと
 # n,a,b=gets.split.map &:to_i
 # p [*1..n].select{|x|s=x.digits.sum;a <= s && s <= b}.sum
+# between?を使うと
+# p [*1..n].select{|i|i.digits.sum.between?(a,b)}.sum
