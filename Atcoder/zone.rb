@@ -1,5 +1,32 @@
-# (A) https://atcoder.jp/contests/zone2021/tasks/zone2021_a
-# S = gets.strip
-# p S.split(/(ZONe)/).select{ |s| s == 'ZONe'}.size
+# https://atcoder.jp/contests/abc199/tasks/abc199_c
 
-# (B) https://atcoder.jp/contests/zone2021/tasks/zone2021_b
+N = gets.to_i
+S = gets.strip.split('')
+Q = gets.to_i
+Queries = []
+Q.times { Queries << gets.split.map(&:to_i) }
+
+# class Array
+#   def swap!(x,y)
+#     self[x], self[y] = self[y], self[x]
+#   end
+# end
+
+
+# Queries.each do |q|
+#   if q[0] == 1
+#     S.swap!(q[1]-1,q[2]-1)
+#   else
+#     S.swap!(0..N-1,N..2*N-1)
+#   end
+# end
+
+Queries.each do |q|
+  if q[0] == 1
+    S[q[1]-1], S[q[2]-1] = S[q[2]-1], S[q[1]-1]
+  else
+    S[0..N-1], S[N..2*N-1] = S[N..2*N-1], S[0..N-1]
+  end
+end
+
+p S
