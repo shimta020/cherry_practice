@@ -1,8 +1,8 @@
-# rspec ./spec/karaoke_spec.rb
+# rspec ./OutPut/karaoke/spec/karaoke_spec.rb
 # ☝rspec実施する際のコマンド
 
 # テスト対象をrequireする
-require "./karaoke.rb"
+require "./OutPut/karaoke/karaoke.rb"
 
 describe KaraokeMachine do
   it "メロディ無し" do
