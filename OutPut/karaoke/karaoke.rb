@@ -7,9 +7,10 @@ class KaraokeMachine
 
   def transpose(amount)
     scales = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-    @melody.split(/(\w#?)/).map{
-            |m| /(\w#?)/.match?(m) ?
-            scales[(scales.find_index(m) + amount) % scales.length] : m 
-           }.join
+    # @melody.split(/(\w#?)/).map{
+    #         |m| /(\w#?)/.match?(m) ?
+    #         scales[(scales.find_index(m) + amount) % scales.length] : m 
+    #        }.join
+    @melody.gsub(/(\w#?)/) { |m| scales[(scales.find_index(m) + amount) % scales.length ] }
   end
 end
