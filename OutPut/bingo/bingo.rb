@@ -8,12 +8,11 @@ class Bingo
   O = (61..75).to_a
   
   def output
-    puts header
-    puts rows
+    puts header + "\n" + rows
   end
   
   def header
-    ['B', 'I', 'N', 'G', 'O'].join(' | ')
+    [' B', ' I', ' N', ' G', ' O'].join(' | ')
   end
 
   def rows
