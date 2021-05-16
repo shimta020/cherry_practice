@@ -24,13 +24,8 @@ end
 
 describe Bingo do
   describe '#generate_card' do
-    let(:card) { Bingo.generate_card }
-    let(:rows) { card.split("\n") }
-    let(:table) { rows.map { |s| s.split(' | ') } }
-    let(:numbers_by_col) do
-      table[1..-1]
-          .map { |cols| cols.map(&:to_i) }
-          .transpose
+    before do
+      bingo = Bingo.new
     end
     it '何らかのデータが出力されること' do
       # デバッグ用に出力結果をコンソール表示する
