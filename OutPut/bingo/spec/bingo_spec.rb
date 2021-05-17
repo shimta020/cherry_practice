@@ -2,7 +2,7 @@
 # ☝rspec実施する際のコマンド
 
 # テスト対象をrequireする
-require "./OutPut/bingo/bingo.rb"
+# require "./OutPut/bingo/bingo.rb"
 
 class Bingo
   def self.generate_card
@@ -24,8 +24,13 @@ end
 
 describe Bingo do
   describe '#generate_card' do
-    before do
-      bingo = Bingo.new
+    let(:card) { Bingo.generate_card }
+    let(:rows) { card.split("\n") }
+    let(:table) { rows.map { |s| s.split(' | ') } }
+    let(:numbers_by_col) do
+      table[1..-1]
+          .map { |cols| cols.map(&:to_i) }
+          .transpose
     end
     it '何らかのデータが出力されること' do
       # デバッグ用に出力結果をコンソール表示する
