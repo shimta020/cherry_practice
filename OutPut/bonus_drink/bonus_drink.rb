@@ -12,8 +12,8 @@
 
 # クラスを使って(再帰関数で)
 
-class Drink
-  def output(number)
+class BonusDrink
+  def total_count_for(number)
     number + bonus(number)
   end
 
@@ -24,4 +24,4 @@ class Drink
   end
 end
 
-puts Drink.new.output(100)
+# puts BonusDrink.new.total_count_for(100)
