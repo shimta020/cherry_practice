@@ -44,29 +44,44 @@
 #       tail = center - 1
 #     end
 #   end
-  
 #   'None'
-
 # end
 
 # puts binary_search(nums, 12)
 
 # 選択ソート
 
-def selection_sort(nums)
-  (nums.length).times do |n|
-    min_idx = n
-    i = n + 1
-    while i < nums.length
-      if nums[min_idx] > nums[i]
-        min_idx = i
-      else
-        i += 1
+# def selection_sort(nums)
+#   (nums.length).times do |n|
+#     min_idx = n
+#     i = n + 1
+#     while i < nums.length
+#       if nums[min_idx] > nums[i]
+#         min_idx = i
+#       else
+#         i += 1
+#       end
+#     end
+#     nums[n], nums[min_idx] = nums[min_idx], nums[n]
+#   end
+#   nums
+# end
+
+# p selection_sort([12, 13, 11, 14, 10])
+
+# バブルソート
+
+def bubble_sort(nums)
+  i = nums.length - 1
+  while i > 0
+    i.times do |n|
+      if nums[n] > nums[n+1]
+        nums[n], nums[n+1] = nums[n+1], nums[n]
       end
     end
-    nums[n], nums[min_idx] = nums[min_idx], nums[n]
+    i -= 1
   end
   nums
 end
 
-p selection_sort([12, 13, 11, 14, 10])
+p bubble_sort([100, 50, 25, 4, 1])
