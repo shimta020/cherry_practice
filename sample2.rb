@@ -13,7 +13,7 @@
 
 # バイナリサーチ
 
-nums = [1, 3, 5, 11, 12, 13, 17, 22, 25, 28]
+# nums = [1, 3, 5, 11, 12, 13, 17, 22, 25, 28]
 
 # def binary_search(nums, num)
 #   if nums[nums.length.div(2)] == num
@@ -29,24 +29,44 @@ nums = [1, 3, 5, 11, 12, 13, 17, 22, 25, 28]
 
 # binary_search(nums, 11)
 
-def binary_search(nums, target)
+# def binary_search(nums, target)
 
-  head = 0
-  tail = nums.length - 1
+#   head = 0
+#   tail = nums.length - 1
 
-  while head <= tail
-    center = (head + tail).div(2)
-    if nums[center] = target
-      return center
-    elsif nums[center] > target
-      head = center + 1
-    else
-      tail = center - 1
-    end
-  end
+#   while head <= tail
+#     center = (head + tail).div(2)
+#     if nums[center] = target
+#       return center
+#     elsif nums[center] > target
+#       head = center + 1
+#     else
+#       tail = center - 1
+#     end
+#   end
   
-  'None'
+#   'None'
 
+# end
+
+# puts binary_search(nums, 12)
+
+# 選択ソート
+
+def selection_sort(nums)
+  (nums.length).times do |n|
+    min_idx = n
+    i = n + 1
+    while i < nums.length
+      if nums[min_idx] > nums[i]
+        min_idx = i
+      else
+        i += 1
+      end
+    end
+    nums[n], nums[min_idx] = nums[min_idx], nums[n]
+  end
+  nums
 end
 
-puts binary_search(nums, 12)
+p selection_sort([12, 13, 11, 14, 10])
