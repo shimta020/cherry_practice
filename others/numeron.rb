@@ -1,4 +1,4 @@
-class NUME
+class Numelon
   def initialize
     @eat = 0
     @bite = 0
@@ -6,14 +6,15 @@ class NUME
   end
 
   def rand_nums
-    arr = (0..9).to_a
-    num_1 = rand(0..9)
-    num_2 = (arr - [num_1]).sample
-    num_3 = (arr - [num_1] - [num_2]).sample
-    [num_1, num_2, num_3]
+    # arr = (0..9).to_a
+    # num_1 = rand(0..9)
+    # num_2 = (arr - [num_1]).sample
+    # num_3 = (arr - [num_1] - [num_2]).sample
+    # [num_1, num_2, num_3]
+    (0..9).to_a.sample(3)
   end
 
-  def numeron
+  def numelon_game
     while
       num = gets.strip.chars.map(&:to_i)
       num.zip(@tmp) do |x, y|
@@ -38,5 +39,5 @@ class NUME
   end
 end
 
-nume = NUME.new
-nume.numeron
+nume = Numelon.new
+nume.numelon_game
