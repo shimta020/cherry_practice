@@ -14,10 +14,9 @@ class NUME
   end
 
   def numeron
-    while @eat != 3
+    while
       num = gets.strip.chars.map(&:to_i)
       num.zip(@tmp) do |x, y|
-        # p [x,y]
         if x == y
           @eat += 1
         else
@@ -25,6 +24,8 @@ class NUME
         end
       end
       output
+      break if @eat == 3
+      @eat, @bite = 0, 0
     end
   end
   
