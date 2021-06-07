@@ -2,6 +2,7 @@ class NUME
   def initialize
     @eat = 0
     @bite = 0
+    @tmp = rand_nums
   end
 
   def rand_nums
@@ -14,15 +15,17 @@ class NUME
   end
 
   def numeron
-    tmp = rand_nums
-    num = gets.strip.chars.map(&:to_i)
-    num.zip(tmp) do |x, y|
-      p [x,y]
-      if x == y
-        @eat += 1
-      else
-        @bite += 1 if tmp.include?(x)
+    while @eat != 3
+      num = gets.strip.chars.map(&:to_i)
+      num.zip(@tmp) do |x, y|
+        p [x,y]
+        if x == y
+          @eat += 1
+        else
+          @bite += 1 if @tmp.include?(x)
+        end
       end
+      output
     end
   end
   
