@@ -19,13 +19,21 @@ class NameIndex
     ワ: ["ヮ", "ワ", "ヰ", "ヱ", "ヲ", "ン"]
   }
 
+  # def create_index
+  #   return if @name.empty?
+
+  #   INDEX.map do |key, value|
+  #     index_names = @name.select{|name| value.include?(name.chr)}.sort
+  #     [key.to_s, index_names] unless index_names.empty?
+  #   end.compact
+  # end
+
   def create_index
     return if @name.empty?
 
-    INDEX.map do |key, value|
-      index_names = @name.select{|name| value.include?(name.chr)}.sort
-      [key.to_s, index_names] unless index_names.empty?
-    end.compact
+    @name.sort.group_by { |name|
+      INDEX.find(['Others']){|_, value| value.include?(name[0])}.first.to_s
+    }.to_a
   end
 
 end
