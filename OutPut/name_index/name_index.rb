@@ -19,10 +19,17 @@ class NameIndex
     ワ: ["ヮ", "ワ", "ヰ", "ヱ", "ヲ", "ン"]
   }
 
-  
-
   def create_index
-    
+    return if @name.empty?
+
+    INDEX.map do |key, value|
+      index_names = @name.select{|name| value.include?(name.chr)}.sort
+      [key.to_s, index_names] unless index_names.empty?
+    end.compact
   end
 
 end
+
+name = ['キシモト', 'イトウ', 'ババ', 'カネダ', 'ワダ', 'ハマダ']
+ni = NameIndex.new(name)
+p ni.create_index
